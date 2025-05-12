@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="name">js project <span>vipin chaudhary | SAU/CS/B.TECH(CSE)/2024/74</span></h1>
+    </header>
+    
+    <div class="container">
+        <div class="grid">
+            <!-- Alert Button -->
+            <div class="block card">
+                <div class="card-header">
+                    <i class="fas fa-bell"></i>
+                    <h3>Alert Demo</h3>
+                </div>
+                <button class="btn-primary" onclick="showAlert()">Show Alert</button>
+            </div>
+
+            <!-- Addition -->
+            <div class="block card">
+                <div class="card-header">
+                    <i class="fas fa-plus-circle"></i>
+                    <h3>Addition</h3>
+                </div>
+                <input type="number" id="num1" placeholder="Number 1">
+                <input type="number" id="num2" placeholder="Number 2">
+                <button class="btn-primary" onclick="add()">Calculate</button>
+                <div class="result" id="addResult"></div>
+            </div>
+
+            <!-- Multiplication -->
+            <div class="block card">
+                <div class="card-header">
+                    <i class="fas fa-times-circle"></i>
+                    <h3>Multiplication</h3>
+                </div>
+                <input type="number" id="mult1" placeholder="Number 1">
+                <input type="number" id="mult2" placeholder="Number 2">
+                <button class="btn-primary" onclick="multiply()">Calculate</button>
+                <div class="result" id="multResult"></div>
+            </div>
+
+            <!-- Even/Odd Checker -->
+            <div class="block card">
+                <div class="card-header">
+                    <i class="fas fa-divide"></i>
+                    <h3>Even/Odd Checker</h3>
+                </div>
+                <input type="number" id="checkNum" placeholder="Enter number">
+                <button class="btn-primary" onclick="checkEvenOdd()">Check</button>
+                <div class="result" id="evenOddResult"></div>
+            </div>
+
+            <!-- Voting Age -->
+            <div class="block card">
+                <div class="card-header">
+                    <i class="fas fa-vote-yea"></i>
+                    <h3>Voting Age Check</h3>
+                </div>
+                <input type="number" id="age" placeholder="Enter age">
+                <button class="btn-primary" onclick="checkVotingAge()">Check Eligibility</button>
+                <div class="result" id="voteResult"></div>
+            </div>
+
+            <!-- Prime Numbers -->
+            <div class="block card">
+                <div class="card-header">
+                    <i class="fas fa-superscript"></i>
+                    <h3>Prime Numbers</h3>
+                </div>
+                <input type="number" id="primeLimit" placeholder="Enter limit">
+                <button class="btn-primary" onclick="generatePrimes()">Generate</button>
+                <div class="result" id="primeResult"></div>
+            </div>
+
+            <!-- Form -->
+            <div class="block card">
+                <div class="card-header">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3>Student Form</h3>
+                </div>
+                <input type="text" required id="name" placeholder="Name">
+                <input type="email" required id="email" placeholder="Email">
+                <input type="tel" required id="contact" placeholder="Contact">
+                <input type="text" required id="rollNo" placeholder="Roll No">
+                <button class="btn-primary" onclick="submitForm()">Submit</button>
+            </div>
+
+            <!-- Circle Color Changer -->
+            <div class="block card">
+                <div class="card-header">
+                    <i class="fas fa-palette"></i>
+                    <h3>Color Changing Circle</h3>
+                </div>
+                <div class="circle" id="colorCircle" onclick="changeCircleColor()"></div>
+                <p class="hint">Click to change color</p>
+            </div>
+
+            <!-- Grade Calculator -->
+            <div class="block card">
+                <div class="card-header">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Grade Calculator</h3>
+                </div>
+                <input type="number" id="marks" placeholder="Enter marks (0-100)">
+                <button class="btn-primary" onclick="calculateGrade()">Calculate Grade</button>
+                <div class="result" id="gradeResult"></div>
+            </div>
+
+            <!-- Click Counter -->
+            <div class="block card">
+                <div class="card-header">
+                    <i class="fas fa-mouse-pointer"></i>
+                    <h3>Click Counter</h3>
+                </div>
+                <div id="clickArea">
+                    <p>Interact with this area:</p>
+                    <div class="counter">
+                        <span><i class="fas fa-mouse"></i> Clicks: <span id="clickCount">0</span></span>
+                        <span><i class="fas fa-mouse"></i> Double Clicks: <span id="dblClickCount">0</span></span>
+                        <span><i class="fas fa-hand-pointer"></i> Hovers: <span id="hoverCount">0</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Color Mixer -->
+            <div class="block card">
+                <div class="card-header">
+                    <i class="fas fa-sliders-h"></i>
+                    <h3>Color Mixer</h3>
+                </div>
+                <div class="slider-container">
+                    <label>Red: <span id="redValue">128</span></label>
+                    <input type="range" id="red" min="0" max="255" value="128">
+                    
+                    <label>Green: <span id="greenValue">128</span></label>
+                    <input type="range" id="green" min="0" max="255" value="128">
+                    
+                    <label>Blue: <span id="blueValue">128</span></label>
+                    <input type="range" id="blue" min="0" max="255" value="128">
+                </div>
+                <div class="color-preview" id="colorPreview"></div>
+                <div class="result" id="rgbValue">RGB: 128, 128, 128</div>
+            </div>
+
+            <!-- Calculator -->
+            <div class="block card calculator-block">
+                <div class="card-header">
+                    <i class="fas fa-calculator"></i>
+                    <h3>Calculator</h3>
+                </div>
+                <div class="calculator">
+                    <input type="text" id="calcDisplay" readonly>
+                    <button onclick="appendToDisplay('7')">7</button>
+                    <button onclick="appendToDisplay('8')">8</button>
+                    <button onclick="appendToDisplay('9')">9</button>
+                    <button onclick="appendToDisplay('+')" class="btn-operator">+</button>
+                    <button onclick="appendToDisplay('4')">4</button>
+                    <button onclick="appendToDisplay('5')">5</button>
+                    <button onclick="appendToDisplay('6')">6</button>
+                    <button onclick="appendToDisplay('-')" class="btn-operator">-</button>
+                    <button onclick="appendToDisplay('1')">1</button>
+                    <button onclick="appendToDisplay('2')">2</button>
+                    <button onclick="appendToDisplay('3')">3</button>
+                    <button onclick="appendToDisplay('*')" class="btn-operator">×</button>
+                    <button onclick="appendToDisplay('0')">0</button>
+                    <button onclick="appendToDisplay('.')">.</button>
+                    <button onclick="calculateResult()" class="btn-equals">=</button>
+                    <button onclick="appendToDisplay('/')" class="btn-operator">/</button>
+                    <button onclick="clearDisplay()" class="btn-clear">Clear</button>
+                    <button onclick="appendToDisplay('%')" class="btn-operator">%</button>
+                    <button onclick="appendToDisplay('**')" class="btn-operator">^</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
